@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{00000000-0000-0000-0000-000000000000}</ProjectGuid>
+    <ProjectGuid>{856BD415-8341-4EB2-B4FE-FD5DD783E446}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>ClassLibrary</AssemblyName>
@@ -26,14 +26,82 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>LCDtoHUD</RootNamespace>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sandbox.Common">
+      <HintPath>..\..\..\..\Programs\Steam\steamapps\common\SpaceEngineers\Bin64\Sandbox.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sandbox.Game">
+      <HintPath>..\..\..\..\Programs\Steam\steamapps\common\SpaceEngineers\Bin64\Sandbox.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="SpaceEngineers.Game">
+      <HintPath>..\..\..\..\Programs\Steam\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="SpaceEngineers.ObjectBuilders">
+      <HintPath>..\..\..\..\Programs\Steam\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.ObjectBuilders.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="VRage">
+      <HintPath>..\..\..\..\Programs\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Game">
+      <HintPath>..\..\..\..\Programs\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Library">
+      <HintPath>..\..\..\..\Programs\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Math">
+      <HintPath>..\..\..\..\Programs\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Scripting">
+      <HintPath>..\..\..\..\Programs\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.Scripting.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Scripts\EntityKernel.cs" />
+    <Compile Include="Scripts\EntityModules\EntityModuleBase.cs" />
+    <Compile Include="Scripts\EntityModules\IEntityModule.cs" />
+    <Compile Include="Scripts\EntityModules\IOperabilityProvider.cs" />
+    <Compile Include="Scripts\Extensions\EntityByDistanceSorter.cs" />
+    <Compile Include="Scripts\Extensions\GeneralExtensions.cs" />
+    <Compile Include="Scripts\Extensions\GridExtenstions.cs" />
+    <Compile Include="Scripts\Extensions\NumberExtensions.cs" />
+    <Compile Include="Scripts\Extensions\TerminalExtensions.cs" />
+    <Compile Include="Scripts\Extensions\VectorExtensions.cs" />
+    <Compile Include="Scripts\IEntityKernel.cs" />
+    <Compile Include="Scripts\ISessionKernel.cs" />
+    <Compile Include="Scripts\Networking\BotSyncModule.cs" />
+    <Compile Include="Scripts\Networking\ChatMessages.cs" />
+    <Compile Include="Scripts\Networking\FactionsMessage.cs" />
+    <Compile Include="Scripts\Networking\ISync.cs" />
+    <Compile Include="Scripts\Networking\MessageBase.cs" />
+    <Compile Include="Scripts\Networking\Messaging.cs" />
+    <Compile Include="Scripts\Networking\Networker.cs" />
+    <Compile Include="Scripts\Networking\NetworkerMessage.cs" />
+    <Compile Include="Scripts\Networking\Sync.cs" />
+    <Compile Include="Scripts\SessionKernel.cs" />
+    <Compile Include="Scripts\SessionModules\DamageProviderModule.cs" />
+    <Compile Include="Scripts\SessionModules\FactionsModule.cs" />
+    <Compile Include="Scripts\SessionModules\IDamageProviderModule.cs" />
+    <Compile Include="Scripts\SessionModules\INetworker.cs" />
+    <Compile Include="Scripts\SessionModules\KernelAssignerModule.cs" />
+    <Compile Include="Scripts\SessionModules\LogProviderModule.cs" />
+    <Compile Include="Scripts\SessionModules\MessagingLoaderModule.cs" />
+    <Compile Include="Scripts\SessionModules\ModAssessmentModule.cs" />
+    <Compile Include="Scripts\SessionModules\NetworkerModule.cs" />
+    <Compile Include="Scripts\SessionModules\SaveProvider.cs" />
+    <Compile Include="Scripts\SessionModules\SessionModuleBase.cs" />
+    <Compile Include="Scripts\Utilities\Log.cs" />
+    <Compile Include="Scripts\Utilities\Profiler.cs" />
+    <Compile Include="Scripts\Utilities\Queue.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

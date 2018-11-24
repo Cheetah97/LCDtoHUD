@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using EemRdx.Helpers;
 using EemRdx.Networking;
 using Sandbox.ModAPI;
 using VRage.Game;
@@ -48,7 +47,7 @@ namespace EemRdx.Utilities
 			TextWriter = null;
 		}
 
-		public void WriteToLog(string caller, string message, bool showOnHud = false, int duration = Constants.DefaultLocalMessageDisplayTime, string color = MyFontEnum.Green)
+		public void WriteToLog(string caller, string message, bool showOnHud = false, int duration = 3000, string color = MyFontEnum.Green)
 		{
 			BuildLogLine(caller, message);
 			if (!showOnHud) return;
